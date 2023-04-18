@@ -1,0 +1,30 @@
+From 31b4602f5c37eaf82dd3edcb50ced397a3ecaa7d Mon Sep 17 00:00:00 2001
+From: kindle4jerry <kindle4jerry@gmail.com>
+Date: Mon, 17 Apr 2023 21:44:07 +0800
+Subject: [PATCH 4/4] fix build device name
+
+---
+ config/version.mk | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/config/version.mk b/config/version.mk
+index a89a00c..5293a2a 100644
+--- a/config/version.mk
++++ b/config/version.mk
+@@ -15,10 +15,10 @@ ifeq ($(IS_RELEASE), true)
+     EXTHM_BUILD_TYPE := RELEASE
+ endif
+ 
+-EXTHM_VERSION := exTHmUI-$(EXTHM_NUM_VERSION)-$(EXTHM_BRANCH)-$(EXTHM_DEVICE)-$(EXTHM_BUILD_TYPE)-$(EXTHM_DATE)
++EXTHM_VERSION := exTHmUI-$(EXTHM_NUM_VERSION)-$(EXTHM_BRANCH)-$(TARGET_PRODUCT)-$(EXTHM_BUILD_TYPE)-$(EXTHM_DATE)
+ 
+ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+     ro.exthm.version=$(EXTHM_VERSION) \
+     ro.exthm.branch=$(EXTHM_BRANCH) \
+     ro.exthm.build.version=$(EXTHM_NUM_VERSION) \
+-    ro.exthm.build.type=$(EXTHM_BUILD_TYPE)
+\ No newline at end of file
++    ro.exthm.build.type=$(EXTHM_BUILD_TYPE)
+-- 
+2.25.1
+

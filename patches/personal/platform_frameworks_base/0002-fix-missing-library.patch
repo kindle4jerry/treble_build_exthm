@@ -1,0 +1,24 @@
+From aba2eb1d659f64d18200615c6e3f71af0d705013 Mon Sep 17 00:00:00 2001
+From: kindle4jerry <kindle4jerry@gmail.com>
+Date: Tue, 18 Apr 2023 13:06:30 +0800
+Subject: [PATCH] fix missing library
+
+---
+ .../src/com/android/systemui/qs/QuickStatusBarHeader.java        | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/packages/SystemUI/src/com/android/systemui/qs/QuickStatusBarHeader.java b/packages/SystemUI/src/com/android/systemui/qs/QuickStatusBarHeader.java
+index b6156a80..448b2e1f 100644
+--- a/packages/SystemUI/src/com/android/systemui/qs/QuickStatusBarHeader.java
++++ b/packages/SystemUI/src/com/android/systemui/qs/QuickStatusBarHeader.java
+@@ -22,6 +22,7 @@ import android.content.res.Configuration;
+ import android.content.res.Resources;
+ import android.graphics.Color;
+ import android.graphics.Rect;
++import android.os.SystemProperties;
+ import android.util.AttributeSet;
+ import android.util.Pair;
+ import android.view.DisplayCutout;
+-- 
+2.25.1
+

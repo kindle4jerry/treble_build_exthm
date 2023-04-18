@@ -1,0 +1,24 @@
+From a395d7c36dab93dbbaba27099c9b7d36612e77b5 Mon Sep 17 00:00:00 2001
+From: kindle4jerry <kindle4jerry@gmail.com>
+Date: Tue, 18 Apr 2023 10:33:30 +0800
+Subject: [PATCH] fix library
+
+---
+ .../audiopolicy/common/managerdefinitions/src/Serializer.cpp     | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/services/audiopolicy/common/managerdefinitions/src/Serializer.cpp b/services/audiopolicy/common/managerdefinitions/src/Serializer.cpp
+index 7fdbc4e..881a3b6 100644
+--- a/services/audiopolicy/common/managerdefinitions/src/Serializer.cpp
++++ b/services/audiopolicy/common/managerdefinitions/src/Serializer.cpp
+@@ -31,6 +31,7 @@
+ #include <utils/RefBase.h>
+ #include "Serializer.h"
+ #include "TypeConverter.h"
++#include <cutils/properties.h>
+ 
+ namespace android {
+ 
+-- 
+2.25.1
+

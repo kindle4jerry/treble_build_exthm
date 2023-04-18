@@ -1,0 +1,24 @@
+From 656dacca3d26f39e9d08c230cfe4a9f5977f6e47 Mon Sep 17 00:00:00 2001
+From: kindle4jerry <kindle4jerry@gmail.com>
+Date: Mon, 17 Apr 2023 21:33:24 +0800
+Subject: [PATCH 2/4] build fix device name
+
+---
+ tools/buildinfo.sh | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/tools/buildinfo.sh b/tools/buildinfo.sh
+index 197e117..43e0efb 100755
+--- a/tools/buildinfo.sh
++++ b/tools/buildinfo.sh
+@@ -58,6 +58,6 @@ if [ -n "$BUILD_THUMBPRINT" ] ; then
+   echo "ro.build.thumbprint=$BUILD_THUMBPRINT"
+ fi
+ 
+-echo "ro.exthm.device=$EXTHM_DEVICE"
++echo "ro.exthm.device=$TARGET_PRODUCT"
+ 
+ echo "# end build properties"
+-- 
+2.25.1
+

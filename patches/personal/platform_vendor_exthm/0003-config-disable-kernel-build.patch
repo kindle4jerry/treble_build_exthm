@@ -1,0 +1,23 @@
+From 105f40598cf5ba1a0a2f1bb1010b20a813503a5e Mon Sep 17 00:00:00 2001
+From: kindle4jerry <kindle4jerry@gmail.com>
+Date: Mon, 17 Apr 2023 21:42:31 +0800
+Subject: [PATCH 3/4] config: disable kernel build
+
+---
+ config/common.mk | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/config/common.mk b/config/common.mk
+index 8ed5837..1df5bfe 100644
+--- a/config/common.mk
++++ b/config/common.mk
+@@ -63,3 +63,6 @@ PRODUCT_PRODUCT_PROPERTIES += \
+ # Enable support of one-handed mode
+ PRODUCT_PRODUCT_PROPERTIES += \
+     ro.support_one_handed_mode=true
++
++# GSI
++TARGET_NO_KERNEL_OVERRIDE := true
+-- 
+2.25.1
+

@@ -1,0 +1,26 @@
+From 979b92f96be7d70c8f4a27965de4687ec2b920f5 Mon Sep 17 00:00:00 2001
+From: kindle4jerry <kindle4jerry@gmail.com>
+Date: Mon, 17 Apr 2023 21:28:57 +0800
+Subject: [PATCH] Every voldmanaged storage is adoptable
+
+Change-Id: I104d871de9defd084477a33b5008d8dc5c67f806
+---
+ main.cpp | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/main.cpp b/main.cpp
+index b07ee68..0c0ca08 100644
+--- a/main.cpp
++++ b/main.cpp
+@@ -267,7 +267,7 @@ static int process_config(VolumeManager* vm, VoldConfigs* configs) {
+             std::string nickname(entry.label);
+             int flags = 0;
+ 
+-            if (entry.is_encryptable()) {
++            if (entry.is_encryptable() || true) {
+                 flags |= android::vold::Disk::Flags::kAdoptable;
+                 configs->has_adoptable = true;
+             }
+-- 
+2.25.1
+
