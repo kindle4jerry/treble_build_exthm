@@ -1,0 +1,26 @@
+From 9bdf213fe460875f0b5c9f1ed96a3ca736291a3e Mon Sep 17 00:00:00 2001
+From: kindle4jerry <kindle4jerry@gmail.com>
+Date: Tue, 18 Apr 2023 13:26:38 +0800
+Subject: [PATCH 4/4] remove apns-full-conf
+
+---
+ target/product/aosp_product.mk | 6 ------
+ 1 file changed, 6 deletions(-)
+
+diff --git a/target/product/aosp_product.mk b/target/product/aosp_product.mk
+index a6f4f03..ddba752 100644
+--- a/target/product/aosp_product.mk
++++ b/target/product/aosp_product.mk
+@@ -38,9 +38,3 @@ PRODUCT_PACKAGES += \
+     preinstalled-packages-platform-aosp-product.xml \
+     WallpaperPicker \
+ 
+-# Telephony:
+-#   Provide a APN configuration to GSI product
+-ifeq ($(EXTHM_BUILD),)
+-PRODUCT_COPY_FILES += \
+-    device/sample/etc/apns-full-conf.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/apns-conf.xml
+-endif
+-- 
+2.25.1
+

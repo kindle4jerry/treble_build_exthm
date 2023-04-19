@@ -1,0 +1,26 @@
+From b45b4c4615afaf4c081cac3ec67308e32612c63f Mon Sep 17 00:00:00 2001
+From: kindle4jerry <kindle4jerry@gmail.com>
+Date: Tue, 18 Apr 2023 11:52:45 +0800
+Subject: [PATCH] config: remove duplicate adb
+
+---
+ config/common.mk | 3 ---
+ 1 file changed, 3 deletions(-)
+
+diff --git a/config/common.mk b/config/common.mk
+index 1df5bfe..665e372 100644
+--- a/config/common.mk
++++ b/config/common.mk
+@@ -41,9 +41,6 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+ PRODUCT_PRODUCT_PROPERTIES += \
+     ro.control_privapp_permissions=log
+ 
+-# ADB authentication
+-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += ro.adb.secure=0
+-
+ # Set GMS client ID base
+ ifeq ($(PRODUCT_GMS_CLIENTID_BASE),)
+ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+-- 
+2.25.1
+

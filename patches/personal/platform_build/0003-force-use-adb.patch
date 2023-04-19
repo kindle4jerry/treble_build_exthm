@@ -1,0 +1,39 @@
+From 4120209f7ce8964357830643975d562a62b7a63c Mon Sep 17 00:00:00 2001
+From: kindle4jerry <kindle4jerry@gmail.com>
+Date: Tue, 18 Apr 2023 12:01:38 +0800
+Subject: [PATCH 3/4] force use adb
+
+---
+ core/build-system.html | 2 +-
+ core/main.mk           | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/core/build-system.html b/core/build-system.html
+index 181e939..760a57d 100644
+--- a/core/build-system.html
++++ b/core/build-system.html
+@@ -264,7 +264,7 @@ for these).
+         <li>Installs non-APK modules that have no tags specified.
+         <li>Installs APKs according to the product definition files; tags
+             are ignored for APK modules.
+-        <li><code>ro.adb.secure=1</code>
++        <li><code>ro.adb.secure=0</code>
+         <li><code>ro.secure=1</code>
+         <li><code>ro.debuggable=0</code>
+         <li><code>adb</code> is disabled by default.
+diff --git a/core/main.mk b/core/main.mk
+index d000631..4cd333b 100644
+--- a/core/main.mk
++++ b/core/main.mk
+@@ -372,7 +372,7 @@ ifneq (,$(user_variant))
+   ADDITIONAL_SYSTEM_PROPERTIES += security.perf_harden=1
+ 
+   ifeq ($(user_variant),user)
+-    ADDITIONAL_SYSTEM_PROPERTIES += ro.adb.secure=1
++    ADDITIONAL_SYSTEM_PROPERTIES += ro.adb.secure=0
+   endif
+ 
+   ifeq ($(user_variant),userdebug)
+-- 
+2.25.1
+
